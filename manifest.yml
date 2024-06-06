@@ -1,0 +1,7 @@
+applications:
+  - name: UMKMPriority
+    memory: 256M
+    instances: 1
+    buildpacks:
+      - python_buildpack
+    command: streamlit run Home.py --server.port=$PORT --server.address=0.0.0.0
