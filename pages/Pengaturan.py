@@ -14,7 +14,7 @@ with cols[4]:
         st.switch_page("pages/MyCashFlow.py")
 with cols[5]:
     if st.button("WarungKu"):
-        st.switch_page("pages/WarungKU.py")
+        st.switch_page("pages/WarungKu.py")
 with cols[6]:
     if st.button("Pengaturan"):
         st.switch_page("pages/Pengaturan.py")

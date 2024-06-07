@@ -1,7 +1,5 @@
 import streamlit as st
 
-# st.write("Menu Home")
-
 cols = st.columns([2,1.2,1,1.2,1.2,1.2,1.2,1.5])
 with cols[0]:
     st.markdown("<h1 style='text-align: left; font-size: 15px;'>UMKMPriority</h1>", unsafe_allow_html=True)
@@ -16,7 +14,7 @@ with cols[4]:
         st.switch_page("pages/MyCashFlow.py")
 with cols[5]:
     if st.button("WarungKu"):
-        st.switch_page("pages/WarungKU.py")
+        st.switch_page("pages/WarungKu.py")
 with cols[6]:
     if st.button("Pengaturan"):
         st.switch_page("pages/Pengaturan.py")
@@ -36,7 +34,7 @@ with cols[0]:
     st.markdown("<h1 style='text-align: left; font-size: 20px;'>Apa itu UMKM Priority?</h1>", unsafe_allow_html=True)
     st.write("<h1 style='text-align: justify; font-size: 15px; font-weight: normal; '>UMKM PRIORITY adalah sebuah aplikasi yang dirancang khusus untuk memberikan solusi terhadap tantangan akses terbatas ke pendanaan yang dihadapi oleh Usaha Mikro, Kecil, dan Menengah (UMKM). Aplikasi ini bertujuan untuk memberikan akses mudah dan cepat kepada UMKM untuk mendapatkan sumber pendanaan yang memadai, yang seringkali sulit diperoleh dari bank dan lembaga keuangan tradisional.</h1>", unsafe_allow_html=True)
     with cols[1]:
-        st.image('pictures\Depan1.jpg', width=400)
+        st.image('pictures/Depan1.jpg', width=400)
 st.write(
             """
             <div style='background-color: lightblue; padding: 10px; border-radius: 10px;'>

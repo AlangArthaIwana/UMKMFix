@@ -8,10 +8,13 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Salin seluruh kode aplikasi ke dalam container
 COPY . .
 
+# Tentukan port yang digunakan oleh Streamlit
+EXPOSE 8501
+
 # Jalankan aplikasi Streamlit
-CMD ["streamlit", "run", "Home.py", "--server.port=8080", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "Home.py", "--server.port=8501"]

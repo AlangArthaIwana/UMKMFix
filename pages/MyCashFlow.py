@@ -17,7 +17,7 @@ with cols[4]:
         st.switch_page("pages/MyCashFlow.py")
 with cols[5]:
     if st.button("WarungKu"):
-        st.switch_page("pages/WarungKU.py")
+        st.switch_page("pages/WarungKu.py")
 with cols[6]:
     if st.button("Pengaturan"):
         st.switch_page("pages/Pengaturan.py")
@@ -25,9 +25,6 @@ st.divider()
 
 st.write("**myCashFlow**")
 
-# cols = st.columns([1,50,1])
-# with cols[1]:
-#     st.image('pictures/bgdepan.jpg', width=1100)
 st.markdown("<h1 style='text-align: center; font-size: 30px;'>Analisis Tahun 2024</h1>", unsafe_allow_html=True)
 chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
 st.bar_chart(chart_data)

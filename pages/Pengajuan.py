@@ -14,7 +14,7 @@ with cols[4]:
         st.switch_page("pages/MyCashFlow.py")
 with cols[5]:
     if st.button("WarungKu"):
-        st.switch_page("pages/WarungKU.py")
+        st.switch_page("pages/WarungKu.py")
 with cols[6]:
     if st.button("Pengaturan"):
         st.switch_page("pages/Pengaturan.py")
@@ -39,6 +39,7 @@ with cols[1]:
             st.write("filename:", uploaded_file.name)
             st.write(bytes_data)
         ajukan = st.form_submit_button("Ajukan")
+
 if ajukan:
     st.write("**Berikut keterangan pengajuan Anda. Mohon tunggu balasan dari penyedia jasa keuangan.**")
     st.write("Nama Pemilik : ", nama_pemilik)
