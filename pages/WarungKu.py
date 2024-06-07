@@ -95,4 +95,4 @@ if submitted:
     display_profile_data(nama_pemilik, nama_usaha, age, gender, income, education, marital_status, number_of_children, home_ownership, prediction)
 
 st.divider()
-st.markdown("<h1 style='text-align: center; font-size: 15px; font-weight: normal;'>Copyright © 2024 UMKMPriority. All rights reserved.</")
+st.markdown("<h1 style='text-align: center; font-size: 15px; font-weight: normal;>Copyright © 2024 UMKMPriority. All rights reserved.</")
