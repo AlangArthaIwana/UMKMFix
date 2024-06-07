@@ -1,12 +1,13 @@
 import streamlit as st
 import numpy as np
 import joblib
+from sklearn.ensemble import RandomForestClassifier
 import os
 
 def make_prediction(input_data):
     model_path = 'model-training/random_forest_model.pkl'
     if not os.path.exists(model_path):
-        st.write(f"Model path {model_path} does not exist.")
+        st.error(f"Model path {model_path} does not exist.")
         return None
 
     try:
@@ -14,10 +15,12 @@ def make_prediction(input_data):
         prediction = model.predict(input_data)
         return prediction
     except Exception as e:
-        st.write(f"Error loading model: {e}")
+        st.error(f"Error loading model: {e}")
         return None
 
 def get_prediction_label(prediction):
+    if prediction is None:
+        return "Prediction error"
     if prediction[0] == 0:
         return "Average"
     elif prediction[0] == 1:
@@ -28,7 +31,6 @@ def get_prediction_label(prediction):
         return "Unknown"
 
 def display_profile_data(nama_pemilik, nama_usaha, age, gender, income, education, marital_status, number_of_children, home_ownership, prediction):
-    # Tampilkan
     prediction_label = get_prediction_label(prediction)
     st.write(f'Halo! **{nama_pemilik}** berikut ada data diri Anda.')  
     st.write(f'Nama Usaha: **{nama_usaha}**')
@@ -46,19 +48,19 @@ with cols[0]:
     st.markdown("<h1 style='text-align: left; font-size: 15px;'>UMKMPriority</h1>", unsafe_allow_html=True)
 with cols[2]:
     if st.button("Home"):
-        st.switch_page("Home.py")
+        st.experimental_set_page_config(page_title="Home", page_icon="🏠")
 with cols[3]:
     if st.button("Pengajuan"):
-        st.switch_page("pages/Pengajuan.py")
+        st.experimental_set_page_config(page_title="Pengajuan", page_icon="📄")
 with cols[4]:
     if st.button("myCashflow"):
-        st.switch_page("pages/MyCashFlow.py")
+        st.experimental_set_page_config(page_title="MyCashFlow", page_icon="💸")
 with cols[5]:
     if st.button("WarungKu"):
-        st.switch_page("pages/WarungKu.py")
+        st.experimental_set_page_config(page_title="WarungKu", page_icon="🏪")
 with cols[6]:
     if st.button("Pengaturan"):
-        st.switch_page("pages/Pengaturan.py")
+        st.experimental_set_page_config(page_title="Pengaturan", page_icon="⚙️")
 st.divider()
 
 st.write("**WarungKu**")
@@ -69,9 +71,10 @@ with cols[1]:
     st.image('pictures/user.jpg', width=250)
     uploaded_files = st.file_uploader("Upload Photo", accept_multiple_files=True)
     for uploaded_file in uploaded_files:
-            bytes_data = uploaded_file.read()
-            st.write("filename:", uploaded_file.name)
-            st.write(bytes_data)
+        bytes_data = uploaded_file.read()
+        st.write("filename:", uploaded_file.name)
+        st.write(bytes_data)
+
 with st.form("my_form"):
     nama_pemilik = st.text_input("Nama Pemilik")
     nama_usaha = st.text_input("Nama Usaha")
@@ -92,4 +95,4 @@ if submitted:
     display_profile_data(nama_pemilik, nama_usaha, age, gender, income, education, marital_status, number_of_children, home_ownership, prediction)
 
 st.divider()
-st.markdown("<h1 style='text-align: center; font-size: 15px; font-weight: normal;'>Copyright © 2024 UMKMPriority. All rights reserved.</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 15px; font-weight: normal;'>Copyright © 2024 UMKMPriority. All rights reserved.</")
