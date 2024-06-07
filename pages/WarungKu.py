@@ -90,7 +90,6 @@ with st.form("my_form"):
 if submitted:
     # Prepare the input data
     input_data = np.array([[age, gender, income, education, marital_status, number_of_children, home_ownership]])
-    st.write(f"Input data: {input_data}")
     prediction = make_prediction(input_data)
     display_profile_data(nama_pemilik, nama_usaha, age, gender, income, education, marital_status, number_of_children, home_ownership, prediction)
 
