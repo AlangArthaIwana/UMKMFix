@@ -48,19 +48,19 @@ with cols[0]:
     st.markdown("<h1 style='text-align: left; font-size: 15px;'>UMKMPriority</h1>", unsafe_allow_html=True)
 with cols[2]:
     if st.button("Home"):
-        st.experimental_set_page_config(page_title="Home", page_icon="🏠")
+        st.switch_page("Home.py")
 with cols[3]:
     if st.button("Pengajuan"):
-        st.experimental_set_page_config(page_title="Pengajuan", page_icon="📄")
+        st.switch_page("pages/Pengajuan.py")
 with cols[4]:
     if st.button("myCashflow"):
-        st.experimental_set_page_config(page_title="MyCashFlow", page_icon="💸")
+        st.switch_page("pages/MyCashFlow.py")
 with cols[5]:
     if st.button("WarungKu"):
-        st.experimental_set_page_config(page_title="WarungKu", page_icon="🏪")
+        st.switch_page("pages/WarungKu.py")
 with cols[6]:
     if st.button("Pengaturan"):
-        st.experimental_set_page_config(page_title="Pengaturan", page_icon="⚙️")
+        st.switch_page("pages/Pengaturan.py")
 st.divider()
 
 st.write("**WarungKu**")
